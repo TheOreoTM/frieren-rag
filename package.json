@@ -1,0 +1,26 @@
+{
+  "name": "frieren-rag",
+  "version": "1.0.0",
+  "description": "RAG system for Frieren knowledge",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "setup-db": "ts-node src/index.ts setup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.x.x",
+    "ts-node": "^10.x.x",
+    "typescript": "^5.x.x"
+  },
+  "dependencies": {
+    "dotenv": "^16.x.x",
+    "langchain": "^0.x.x",
+    "openai": "^4.x.x",
+    "@google/generative-ai": "^0.x.x"
+  }
+}
