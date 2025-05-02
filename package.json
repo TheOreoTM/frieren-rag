@@ -18,9 +18,10 @@
     "typescript": "^5.x.x"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.x.x",
+    "chromadb": "^2.3.0",
     "dotenv": "^16.x.x",
     "langchain": "^0.x.x",
-    "openai": "^4.x.x",
-    "@google/generative-ai": "^0.x.x"
+    "openai": "^4.x.x"
   }
 }
