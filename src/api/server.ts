@@ -16,6 +16,7 @@ export const startApiServer = (vectorDb: VectorDatabase) => {
 
     app.post("/query", async (req: Request, res: Response) => {
         const userQuery = req.body.query;
+        const options = req.body.options || {};
 
         if (!userQuery || typeof userQuery !== "string") {
             res.status(400).json({ error: 'Invalid query. Please provide a "query" string in the request body.' });
@@ -25,7 +26,7 @@ export const startApiServer = (vectorDb: VectorDatabase) => {
         console.log(`Received query: "${userQuery}"`);
 
         try {
-            await streamQueryFrierenRAG(userQuery, vectorDb, res);
+            await streamQueryFrierenRAG(userQuery, vectorDb, res, options);
         } catch (error) {
             console.error("Error handling /query request:", error);
             if (!res.headersSent) {

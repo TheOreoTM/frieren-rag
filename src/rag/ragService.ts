@@ -4,6 +4,7 @@ import { config } from "../config";
 import { generateEmbedding } from "../embeddings/embeddingClient";
 import { VectorDatabase } from "../vectorDb/vectorDbClient";
 import { Response } from "express";
+import { buildPrompt, type BuildPromptOptions } from "../prompt";
 
 let llmClient: OpenAI | GoogleGenerativeAI;
 let llmModel: string;
@@ -20,7 +21,11 @@ if (config.llmModelName.includes("gpt")) {
     throw new Error(`Unsupported LLM model specified in config: ${config.llmModelName}`);
 }
 
-export async function queryFrierenRAG(userQuery: string, vectorDb: VectorDatabase): Promise<string> {
+export async function queryFrierenRAG(
+    userQuery: string,
+    vectorDb: VectorDatabase,
+    options?: BuildPromptOptions
+): Promise<string> {
     console.log("Embedding user query...");
     const queryEmbedding = await generateEmbedding(userQuery);
 
@@ -29,25 +34,38 @@ export async function queryFrierenRAG(userQuery: string, vectorDb: VectorDatabas
 
     if (relevantChunks.length === 0) {
         console.log("No relevant chunks found.");
-        return "I couldn't find relevant information about that in the Frieren data.";
+        // Use buildPrompt for the "not found" message as well, passes empty context
+        const prompt = buildPrompt("", userQuery, options);
+        // Send a minimal prompt to get the "not found" response style
+        try {
+            if (llmClient instanceof OpenAI) {
+                const completion = await llmClient.chat.completions.create({
+                    model: llmModel,
+                    messages: [{ role: "user", content: buildPrompt("", userQuery, options) }],
+                    max_tokens: 100, // Small max_tokens for "not found" response
+                    temperature: 0.1,
+                });
+                return completion.choices[0].message.content || "Could not generate a response.";
+            } else if (llmClient instanceof GoogleGenerativeAI) {
+                const model = llmClient.getGenerativeModel({ model: llmModel });
+                const result = await model.generateContent(buildPrompt("", userQuery, options));
+                const response = await result.response;
+                return response.text();
+            } else {
+                return "Internal error: LLM client not properly initialized.";
+            }
+        } catch (error) {
+            console.error("Error calling LLM for 'not found' response:", error);
+            return "I couldn't find relevant information about that in the Frieren data, and an error occurred while generating the specific response.";
+        }
     }
 
     console.log(`Found ${relevantChunks.length} relevant chunks.`);
 
     const context = relevantChunks.map((item) => item.chunk).join("\n---\n");
 
-    const prompt = `You are an AI assistant providing information about Frieren: Beyond Journey's End.
-Use the following information provided in the "Context" section to answer the "User Question".
-Synthesize the answer by combining relevant details from the provided Context.
-If the necessary information to answer the question is not present in the Context, state clearly: "I cannot find the answer in the provided information."
-Do not include information from outside the provided context.
-
-Context:
-${context}
-
-User Question: ${userQuery}
-
-Answer:`;
+    // Build prompt using the new function
+    const prompt = buildPrompt(context, userQuery, options);
 
     console.log(`Calling LLM (${llmModel}) with context...`);
     try {
@@ -55,7 +73,7 @@ Answer:`;
             const completion = await llmClient.chat.completions.create({
                 model: llmModel,
                 messages: [{ role: "user", content: prompt }],
-                max_tokens: 800,
+                max_tokens: 800, // Still controlled by API param, not prompt option text
                 temperature: 0.1,
             });
             return completion.choices[0].message.content || "Could not generate a response.";
@@ -73,11 +91,15 @@ Answer:`;
     }
 }
 
-export async function streamQueryFrierenRAG(userQuery: string, vectorDb: VectorDatabase, res: Response): Promise<void> {
-    // Set headers for streaming
-    res.setHeader("Content-Type", "text/plain"); // Using plain text for simplicity, could be text/event-stream
+export async function streamQueryFrierenRAG(
+    userQuery: string,
+    vectorDb: VectorDatabase,
+    res: Response,
+    options?: BuildPromptOptions
+): Promise<void> {
+    res.setHeader("Content-Type", "text/plain");
     res.setHeader("Transfer-Encoding", "chunked");
-    res.setHeader("X-Content-Type-Options", "nosniff"); // Security header
+    res.setHeader("X-Content-Type-Options", "nosniff");
 
     try {
         console.log("Embedding user query...");
@@ -88,8 +110,33 @@ export async function streamQueryFrierenRAG(userQuery: string, vectorDb: VectorD
 
         if (relevantChunks.length === 0) {
             console.log("No relevant chunks found.");
-            res.write("I couldn't find relevant information about that in the Frieren data.\n");
-            res.end(); // End the stream
+            const prompt = buildPrompt("", userQuery, options);
+            if (llmClient instanceof OpenAI) {
+                const stream = await llmClient.chat.completions.create({
+                    model: llmModel,
+                    messages: [{ role: "user", content: prompt }],
+                    max_tokens: 100,
+                    temperature: 0.1,
+                    stream: true,
+                });
+                for await (const chunk of stream) {
+                    if (chunk.choices && chunk.choices[0].delta && chunk.choices[0].delta.content) {
+                        res.write(chunk.choices[0].delta.content);
+                    }
+                }
+            } else if (llmClient instanceof GoogleGenerativeAI) {
+                const model = llmClient.getGenerativeModel({ model: llmModel });
+                const result = await model.generateContent(prompt);
+                const response = result.response;
+                const stream = response.text();
+                for await (const chunk of stream) {
+                    res.write(chunk);
+                }
+            } else {
+                res.write("Internal error: LLM client not properly initialized.\n");
+            }
+
+            res.end();
             return;
         }
 
@@ -97,18 +144,7 @@ export async function streamQueryFrierenRAG(userQuery: string, vectorDb: VectorD
 
         const context = relevantChunks.map((item) => item.chunk).join("\n---\n");
 
-        const prompt = `You are an AI assistant providing information about Frieren: Beyond Journey's End.
-Use the following information provided in the "Context" section to answer the "User Question".
-Synthesize the answer by combining relevant details from the provided Context.
-If the necessary information to answer the question is not present in the Context, state clearly: "I cannot find the answer in the provided information."
-Do not include information from outside the provided context.
-
-Context:
-${context}
-
-User Question: ${userQuery}
-
-Answer:`;
+        const prompt = buildPrompt(context, userQuery, options);
 
         console.log(`Calling LLM (${llmModel}) with streaming...`);
 
@@ -121,34 +157,30 @@ Answer:`;
                 stream: true,
             });
 
-            // Process the stream and write to the response
             for await (const chunk of stream) {
                 if (chunk.choices && chunk.choices[0].delta && chunk.choices[0].delta.content) {
-                    res.write(chunk.choices[0].delta.content); // Write content chunks
+                    res.write(chunk.choices[0].delta.content);
                 }
             }
         } else if (llmClient instanceof GoogleGenerativeAI) {
             const model = llmClient.getGenerativeModel({ model: llmModel });
-            const result = await model.generateContent(prompt); // Using generateContent which supports streaming results object
+            const result = await model.generateContent(prompt);
             const response = result.response;
-            const stream = response.text(); // Get the AsyncIterable stream of text
+            const stream = response.text();
 
-            // Process the stream
             for await (const chunk of stream) {
-                res.write(chunk); // Write text chunks
+                res.write(chunk);
             }
         } else {
             res.write("Internal error: LLM client not properly initialized.\n");
         }
 
-        res.end(); // End the stream after processing
+        res.end();
     } catch (error) {
         console.error("Error during streaming RAG query:", error);
-        // If headers haven't been sent yet, send an error response
         if (!res.headersSent) {
             res.status(500).send(`An error occurred: ${(error as any).message || "Unknown error"}`);
         } else {
-            // If headers were sent, just end the stream after logging
             res.end(`\nError: ${(error as any).message || "Unknown error"}`);
         }
     }
