@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies (installing ALL, including devDependencies needed for build)
-RUN npm ci # <-- REMOVE --production here
+RUN npm ci 
 
 # Copy the rest of your application code, including the src/data/raw directory
 COPY . .
