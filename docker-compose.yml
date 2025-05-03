@@ -9,7 +9,7 @@ services:
     container_name: frieren_rag_app
 
     ports:
-      - "3001:3000"
+      - "127.0.0.1:3001:3000"
 
     env_file:
       - .env
