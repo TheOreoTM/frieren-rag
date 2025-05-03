@@ -1,11 +1,10 @@
-// src/index.ts
 import { config } from "./config";
 import { loadAllFrierenData } from "./data/dataLoader";
 import { splitTextIntoChunks } from "./data/textSplitter";
 import { generateEmbeddings } from "./embeddings/embeddingClient";
 import { InMemoryVectorDB, ChromaVectorDB, VectorDatabase } from "./vectorDb/vectorDbClient";
-import { queryFrierenRAG } from "./rag/ragService";
-import * as readline from "readline";
+import { startApiServer } from "./api/server";
+import { runCli } from "./cli";
 
 async function populateDatabase(vectorDb: VectorDatabase): Promise<void> {
     console.log(`Loading data from ${config.frierenDataDir}...`);
@@ -41,44 +40,31 @@ async function main() {
     }
     await vectorDb.initialize();
 
-    if (config.vectorDbType === "memory") {
-        await populateDatabase(vectorDb); // Populate the in-memory DB on startup
-    } else {
-        console.log("Assuming persistent database is already populated.");
+    const args = process.argv.slice(2);
+
+    if (args.includes("setup-db")) {
+        if (config.vectorDbType === "memory") {
+            console.warn("Cannot run 'setup-db' command with in-memory database type. Data is not persistent.");
+        } else {
+            await populateDatabase(vectorDb);
+            console.log("Persistent database setup complete.");
+        }
+        process.exit(0);
     }
 
-    console.log("\nFrieren RAG System Ready!");
-    console.log("Type your questions about Frieren. Type 'quit' or 'exit' to close.");
+    // If in-memory DB, populate it now on startup
+    if (config.vectorDbType === "memory") {
+        await populateDatabase(vectorDb);
+    } else {
+        console.log("Assuming persistent database is already populated (run 'npm run setup-db' if not).");
+    }
 
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-    });
-
-    rl.on("line", async (input) => {
-        const query = input.trim();
-        if (query.toLowerCase() === "quit" || query.toLowerCase() === "exit") {
-            rl.close();
-            return;
-        }
-
-        if (query === "") {
-            console.log("Please enter a question.");
-            return;
-        }
-
-        console.log(`\nUser: ${query}`);
-        const answer = await queryFrierenRAG(query, vectorDb);
-        console.log(`\nAI: ${answer}`);
-        console.log("\nType your next question:");
-    });
-
-    rl.on("close", () => {
-        console.log("Exiting Frieren RAG System. Farewell!");
-        process.exit(0);
-    });
-
-    console.log("Type your question:");
+    // Determine whether to start API or CLI based on args
+    if (args.includes("cli")) {
+        runCli(vectorDb);
+    } else {
+        startApiServer(vectorDb);
+    }
 }
 
 main().catch(console.error);

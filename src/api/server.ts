@@ -1,0 +1,43 @@
+import express, { Express, Request, Response } from "express";
+import bodyParser from "body-parser";
+import { config } from "../config";
+import { VectorDatabase } from "../vectorDb/vectorDbClient";
+import { streamQueryFrierenRAG } from "../rag/ragService";
+
+export const startApiServer = (vectorDb: VectorDatabase) => {
+    const app: Express = express();
+    const port = process.env.PORT || 3000;
+
+    app.use(bodyParser.json());
+
+    app.get("/", async (req, res) => {
+        res.send("Frieren RAG API is running.");
+    });
+
+    app.post("/query", async (req: Request, res: Response) => {
+        const userQuery = req.body.query;
+
+        if (!userQuery || typeof userQuery !== "string") {
+            res.status(400).json({ error: 'Invalid query. Please provide a "query" string in the request body.' });
+            return;
+        }
+
+        console.log(`Received query: "${userQuery}"`);
+
+        try {
+            await streamQueryFrierenRAG(userQuery, vectorDb, res);
+        } catch (error) {
+            console.error("Error handling /query request:", error);
+            if (!res.headersSent) {
+                res.status(500).json({ error: "An internal error occurred while processing your query." });
+            }
+        }
+    });
+
+    app.listen(port, () => {
+        console.log(`⚡️[server]: API Server is running at http://localhost:${port}`);
+        console.log(
+            `Send POST requests to http://localhost:${port}/query with a JSON body like { "query": "Your question here" }`
+        );
+    });
+};
