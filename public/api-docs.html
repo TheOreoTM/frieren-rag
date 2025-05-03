@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation - Frieren RAG Chat</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #5a2a82;
+            /* Frieren purple */
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        code {
+            background-color: #e9e9e9;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        pre {
+            background-color: #e9e9e9;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            /* Add horizontal scroll for long code */
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #5a2a82;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="/">← Back to Chat</a>
+        </div>
+
+        <h1>API Documentation</h1>
+        <p>Documentation for the Frieren RAG Chat API endpoints.</p>
+
+        <h2>Endpoints</h2>
+
+        <h3>POST /query</h3>
+        <p>Retrieves information about Frieren characters based on a natural language query.</p>
+
+        <h4>Request</h4>
+        <ul>
+            <li><strong>Method:</strong> <code>POST</code></li>
+            <li><strong>URL:</strong> <code>/query</code></li>
+            <li><strong>Content-Type:</strong> <code>application/json</code></li>
+            <li><strong>Body:</strong> JSON object with the following fields:
+                <ul>
+                    <li><code>query</code> (<strong>string</strong>, required): The natural language question about
+                        Frieren characters.</li>
+                    <li><code>options</code> (<strong>object</strong>, optional): An object to configure the LLM
+                        response.
+                        <ul>
+                            <li><code>language</code> (<strong>string</strong>, optional): The desired language for the
+                                response (e.g., "English", "Japanese", "German"). Defaults to "English".</li>
+                            <li><code>allowEducatedGuess</code> (<strong>boolean</strong>, optional): If
+                                <code>true</code>, the LLM may attempt educated guesses when information is not directly
+                                available, stating that the guess may not be accurate. Defaults to <code>false</code>.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4>Response</h4>
+        <ul>
+            <li><strong>Content-Type:</strong> <code>text/plain</code> (Streaming)</li>
+            <li><strong>Transfer-Encoding:</strong> <code>chunked</code></li>
+            <li>The response is streamed as plain text as the AI generates the answer.</li>
+            <li>Errors will return a non-200 status code and a JSON error body if they occur before streaming starts, or
+                plain text error messages appended to the stream if they occur during generation.</li>
+        </ul>
+
+        <h4>Example Request (using curl)</h4>
+        <pre><code>curl -X POST http://localhost:3000/query \
+-H "Content-Type: application/json" \
+-d '{
+    "query": "What is Frieren's favorite spell?",
+    "options": {
+        "language": "English",
+        "allowEducatedGuess": false
+    }
+}'</code></pre>
+
+        <p>You can omit the <code>options</code> field or individual options if you want to use the defaults.</p>
+        <pre><code>curl -X POST http://localhost:3000/query \
+-H "Content-Type: application/json" \
+-d '{"query": "Tell me about Himmel"}'</code></pre>
+
+        <p>The output will be streamed to your console.</p>
+
+
+        <div class="nav-links" style="margin-top: 40px;">
+            <a href="/">← Back to Chat</a>
+        </div>
+    </div>
+</body>
+
+</html>

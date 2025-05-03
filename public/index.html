@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frieren RAG Chat</title>
+    <style>
+        /* ... (your existing CSS here) ... */
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #5a2a82;
+        }
+
+        .options {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #e9e9e9;
+            border-radius: 4px;
+        }
+
+        .options label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .input-area {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .input-area input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+
+        .input-area button {
+            padding: 10px 15px;
+            background-color: #5a2a82;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .input-area button:hover {
+            background-color: #7d4cb3;
+        }
+
+        .examples {
+            margin-bottom: 20px;
+        }
+
+        .examples span {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 12px;
+            background-color: #e0e0e0;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .examples span:hover {
+            background-color: #ccc;
+        }
+
+        #output {
+            border: 1px solid #ccc;
+            padding: 15px;
+            min-height: 150px;
+            max-height: 400px;
+            overflow-y: auto;
+            background-color: #fff;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            word-break: break-word;
+        }
+
+        .loading::after {
+            content: '...';
+            animation: loading-dots 1s infinite;
+        }
+
+        @keyframes loading-dots {
+
+            0%,
+            20% {
+                content: '.';
+            }
+
+            40% {
+                content: '..';
+            }
+
+            60% {
+                content: '...';
+            }
+
+            80%,
+            100% {
+                content: '';
+            }
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+            text-align: right;
+            /* Align links to the right */
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5a2a82;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="/api-docs.html">API Documentation</a>
+        </div>
+
+        <h1>Frieren RAG Chat</h1>
+        <p>Ask questions about the Frieren: Beyond Journey's End characters based on the provided wiki data.</p>
+
+        <div class="options">
+            <label for="languageSelect">Language:</label>
+            <select id="languageSelect">
+                <option value="English">English</option>
+                <option value="Japanese">Japanese</option>
+                <option value="German">German</option>
+            </select>
+
+            <label for="guessToggle" style="margin-left: 20px;">Educated Guess:</label>
+            <input type="checkbox" id="guessToggle"> On
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="queryInput" placeholder="Ask a question...">
+            <button id="sendButton">Send Query</button>
+        </div>
+
+        <div class="examples">
+            <strong>Examples:</strong>
+            <span data-query="What is Frieren's personality like?">Frieren's personality</span>
+            <span data-query="Tell me about Stark's backstory.">Stark's backstory</span>
+            <span data-query="What are Heiter's abilities?">Heiter's abilities</span>
+            <span data-query="Describe Eisen's appearance.">Eisen's appearance</span>
+            <span data-query="Who was Flamme?">Who was Flamme?</span>
+            <span data-query="What is the Demon King like?">Demon King description</span>
+        </div>
+
+        <h2>Response:</h2>
+        <div id="output">
+            The AI response will appear here...
+        </div>
+    </div>
+
+    <script>
+        const queryInput = document.getElementById('queryInput');
+        const sendButton = document.getElementById('sendButton');
+        const languageSelect = document.getElementById('languageSelect');
+        const guessToggle = document.getElementById('guessToggle');
+        const outputDiv = document.getElementById('output');
+        const exampleSpans = document.querySelectorAll('.examples span');
+
+        exampleSpans.forEach(span => {
+            span.addEventListener('click', () => {
+                queryInput.value = span.dataset.query;
+            });
+        });
+
+        sendButton.addEventListener('click', async () => {
+            const query = queryInput.value.trim();
+            if (!query) {
+                alert('Please enter a query.');
+                return;
+            }
+
+            outputDiv.textContent = 'Generating response';
+            outputDiv.classList.add('loading');
+
+            const selectedLanguage = languageSelect.value;
+            const allowEducatedGuess = guessToggle.checked;
+
+            const options = {
+                language: selectedLanguage,
+                allowEducatedGuess: allowEducatedGuess
+            };
+
+            try {
+                const response = await fetch('/query', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query: query, options: options }),
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    outputDiv.textContent = `API Error: ${response.status} ${response.statusText}\n${errorText}`;
+                    outputDiv.classList.remove('loading');
+                    return;
+                }
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let result = '';
+                outputDiv.textContent = '';
+
+                async function readStream() {
+                    const { done, value } = await reader.read();
+                    if (done) {
+                        console.log('Stream finished.');
+                        outputDiv.classList.remove('loading');
+                        return;
+                    }
+
+                    const chunk = decoder.decode(value, { stream: true });
+                    result += chunk;
+                    outputDiv.textContent = result;
+
+                    readStream();
+                }
+
+                readStream();
+
+            } catch (error) {
+                console.error('Fetch error:', error);
+                outputDiv.textContent = `Workspace Error: ${error}`;
+                outputDiv.classList.remove('loading');
+            }
+        });
+    </script>
+</body>
+
+</html>

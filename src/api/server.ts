@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from "express";
 import bodyParser from "body-parser";
-import { config } from "../config";
+import path from "path";
 import { VectorDatabase } from "../vectorDb/vectorDbClient";
 import { streamQueryFrierenRAG } from "../rag/ragService";
 
@@ -8,11 +8,9 @@ export const startApiServer = (vectorDb: VectorDatabase) => {
     const app: Express = express();
     const port = process.env.PORT || 3000;
 
-    app.use(bodyParser.json());
+    app.use(express.static(path.join(__dirname, "../../public")));
 
-    app.get("/", async (req, res) => {
-        res.send("Frieren RAG API is running.");
-    });
+    app.use(bodyParser.json());
 
     app.post("/query", async (req: Request, res: Response) => {
         const userQuery = req.body.query;
@@ -23,7 +21,7 @@ export const startApiServer = (vectorDb: VectorDatabase) => {
             return;
         }
 
-        console.log(`Received query: "${userQuery}"`);
+        console.log(`Received query: "${userQuery}" with options: ${JSON.stringify(options)}`);
 
         try {
             await streamQueryFrierenRAG(userQuery, vectorDb, res, options);
@@ -37,8 +35,7 @@ export const startApiServer = (vectorDb: VectorDatabase) => {
 
     app.listen(port, () => {
         console.log(`⚡️[server]: API Server is running at http://localhost:${port}`);
-        console.log(
-            `Send POST requests to http://localhost:${port}/query with a JSON body like { "query": "Your question here" }`
-        );
+        console.log(`Serving static files from http://localhost:${port}/`);
+        console.log(`POST /query endpoint available.`);
     });
 };
