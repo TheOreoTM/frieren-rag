@@ -1,7 +1,23 @@
+version: '3.8'
+
 services:
   app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: frieren_rag_app
+
     ports:
       - "127.0.0.1:3001:3000"
+
+    env_file:
+      - .env
+
+    depends_on:
+      - chroma
+
+    restart: unless-stopped
 
   chroma:
     image: chromadb/chroma:latest
@@ -11,8 +27,10 @@ services:
       - ANONYMIZED_TELEMETRY=FALSE
     ports:
       - "127.0.0.1:8001:8000"
+
     volumes:
       - chromadb_data:/chroma/chroma
+
     restart: unless-stopped
 
 volumes:
