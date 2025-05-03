@@ -28,7 +28,7 @@
     "chromadb": "^2.3.0",
     "dotenv": "^16.x.x",
     "express": "^5.1.0",
-    "langchain": "^0.x.x",
+    "langchain": "^0.3.24",
     "openai": "^4.x.x"
   }
 }
