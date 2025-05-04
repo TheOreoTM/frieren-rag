@@ -79,7 +79,9 @@ export class ChromaVectorDB implements VectorDatabase {
             console.log(`Connected to existing ChromaDB collection: ${this.collectionName}`);
         } catch (error) {
             console.log(`ChromaDB collection "${this.collectionName}" not found, creating...`);
-            this.collection = await this.client.createCollection({ name: this.collectionName });
+            this.collection = await this.client.createCollection({
+                name: this.collectionName,
+            });
             console.log(`Created new ChromaDB collection: ${this.collectionName}`);
         }
     }
@@ -92,14 +94,19 @@ export class ChromaVectorDB implements VectorDatabase {
         const documents = docs.map((doc) => doc.content);
         const metadatas = docs.map((doc) => doc.metadata || {});
 
+        console.log(ids);
+        console.log(documents);
+        console.log(metadatas);
+        console.log(embeddings);
+
         try {
-            await this.collection.add({
+            await this.collection.upsert({
                 ids: ids,
                 embeddings: embeddings,
                 documents: documents,
                 metadatas: metadatas,
             });
-            console.log(`Added ${docs.length} documents to ChromaDB collection: ${this.collectionName}`);
+            console.log(`Upserted ${docs.length} documents to ChromaDB collection: ${this.collectionName}`);
         } catch (error) {
             console.error("Error adding documents to ChromaDB:", error);
             throw error;
