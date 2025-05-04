@@ -94,10 +94,15 @@ export class ChromaVectorDB implements VectorDatabase {
         const documents = docs.map((doc) => doc.content);
         const metadatas = docs.map((doc) => doc.metadata || {});
 
-        console.log(ids);
-        console.log(documents);
-        console.log(metadatas);
-        console.log(embeddings);
+        console.log("Prepared data for ChromaDB:");
+        console.log("IDs:", ids);
+        console.log("Documents (first 5):", documents.slice(0, 5));
+        console.log("Metadatas (first 5):", metadatas.slice(0, 5));
+        console.log("Embeddings (first 5, first 10 dimensions):");
+        embeddings.slice(0, 5).forEach((emb, index) => {
+            console.log(`  Emb ${index}: [${emb.slice(0, 10).join(", ")}...] (dimension: ${emb.length})`);
+        });
+        console.log(`Total embeddings: ${embeddings.length}`);
 
         try {
             await this.collection.upsert({
