@@ -1,0 +1,81 @@
+## Ecology Data
+
+---
+
+Section: Introduction
+Content:
+This article contains a list of relevant monsters, fauna, and flora that appear within the world of Frieren: Beyond Journey's End.
+In the world of Frieren, organisms can be categorized into humanity, monsters, demons, fauna, and flora.
+
+Monsters are classified as creatures that disintegrate into mana particles upon death. They often utilize mana and may be aggressive or passive. Some are territorial, while others are traverse the continent. They are drawn to sources of mana, such as the monsters attracted to the Sword of the Hero, and may consume the mana of their prey.
+Demons are defined as "monsters that use the power of words" by the Great Mage Flamme. Due to their prevalence and their classification as a species, they have been excluded from this list.
+Fauna can be divided into wildlife and domesticated animals. They are used as resources for sustenance and labor.
+Flora grow in the wild or are harvested as domesticated species by humans. Flora are used for sustenance, medicine, and enrichment.
+
+---
+
+Section: Named Monsters
+Entries:
+Name: Spiegel
+Description: A monster that conjures illusory doppelgängers of the examinees that they must fight. It is a monster from the mythical era.
+Name: Stille
+Description: A mana-sensitive bird.
+
+---
+
+Section: Named Fauna
+Entries:
+Name: Solar Dragon
+Description: A large dragon that poses a threat to travelers.
+Name: Abyssal Dragon
+Description: A large dragon that was defeated by the Hero Party in the past.
+Name: Fresser
+Description: Referred to as a "lion-pig" or "lion-bear" (likely "lion-boar").
+
+---
+
+Section: Named Flora
+Entries:
+Name: Blue-Moon Weed
+Description: A type of plant.
+Name: Chaos Flower
+Description: A subspecies of this flower can inflict a sleeping curse.
+Name: Holy Snow Crystal
+Description: An environmental substance that can be used in commodities like magic potions.
+Name: Icicle Cherry Blossom
+Description: A winter flower.
+
+---
+
+Section: Environment
+Content:
+During the travels of the Hero Party and Frieren's Party, the adventurers traverse various landscapes with different kinds of organisms. Warmer global weather patterns shape the Central Lands and get colder towards the Northern Lands. There are differentiations between local climates in coastal regions, such as the area around the city of Warm, or regions of high altitude, such as the Schwer Mountains. A variety of ecological systems, including oceans, forests, alpine regions, underground cavities, and snowfields exist as a result.
+
+---
+
+Section: Biodiversity & Themes
+Content:
+The world of Frieren is believed by much of humanity to be brought into existence by the Goddess of Creation. However, ideas of evolutionary biology, such as convergent evolution, are discussed by various demons within the series. Species are depicted to form societies, such as humans, or small groups, such as animals that hunt together as a pack. Some species may also be solitary, such as demons, who live their lives minding only their individual needs and do not raise their young. Species will struggle for coexistence as they compete for limited resources and engage in predator-prey relationships.
+
+Some lifeforms utilize mana, but mana can also be infused into nonliving matter, such as the Magic-Nullifying Crystals, and seems to be a property of the world itself. Some species can accumulate mana in their individual mana reserves, and they can train throughout their lives to increase these reserves. Other species fit in niches, such as the Stille birds, which are sensitive to sources of mana while simultaneously possessing very little mana themselves. Certain environmental substances, such as Holy Snow Crystals or ores, can be used in commodities like Magic potions and may be extracted by humanity for resources. Subsequently, both the exploitation and stewardship of the environment are explored throughout the series.
+
+---
+
+Section: Trivia
+Content:
+Frieren states that the Icicle Cherry Blossom may be her favorite winter flower.
+The monster/dragon that chases the Hero Party in a flashback in both Chapter 1 and Chapter 34 resemble the same dragon, however, it is animated as two different creatures in Episode 1 and Episode 16 in the anime adaptation. It also appears in a flashback in Chapter 61.
+Though the official Viz English translation calls the "Fresser" both a "lion-pig" and a "lion-bear," the second is likely a mistake and may have been intended to be "lion-boar" instead.
+Wirbel first mentions that the Hero Party fought the "Hell Emperor Dragon" in Chapter 59. The Hero Party actually encounters this dragon in Chapter 113, though it is translated in this chapter as the "Abyssal Dragon" by Viz.
+Various ecology have been options for voting during either the first or second popularity contest. The second popularity contest had two different rankings, one where multiple votes per character were counted, and one where only unique votes (one vote per character per person) were counted.
+
+---
+
+Section: Etymology
+Content:
+"Einsam" is German for "lonely/lonesome."
+"Geisel" is German for "hostage," possibly referring to the corpse the monster uses as bait. Furthermore, the similarly pronounced word "Geißel"/"Geissel" is German for "flagellum/scourge," which might refer to the monster's whip-like tail.
+"Fresser" is German for "devourer/glutton/feeder."
+"Stille" is German for "silence/calmness."
+
+---

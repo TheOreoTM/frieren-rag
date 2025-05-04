@@ -1,0 +1,44 @@
+## Hero Party Data
+
+---
+
+Section: Introduction
+Content:
+The Hero Party was the legendary group of adventurers, consisting of the human Hero Himmel, dwarven Warrior Eisen, human Priest Heiter, and elven Mage Frieren, who defeated the Demon King after a ten-year-long journey.
+The party was dissolved after they returned to the Royal Capital, and they reunited fifty years later for one final adventure to see the Era Meteors together.
+
+---
+
+Section: Members
+Members:
+- Frieren
+- Himmel
+- Heiter
+- Eisen
+
+---
+
+Section: Member Overview
+Content:
+The party that saved the world and defeated the Demon King consisted of an anti-social elven mage, an alcoholic priest, a somewhat narcissistic hero and a cowardly dwarf. The latter two were nearly executed by the King because of their casual way of address. Himmel and Heiter were sociable and, according to Frieren, could easily open up people's hearts. On the other hand, Frieren and Eisen were more awkward, but in fights they were both more hotheaded and would often fight their way to the goal if it was in sight. All four survived the adventure and made it safely back to the Capital, where they were hailed as heroes.
+
+---
+
+Section: Abilities
+Content:
+The Hero Party's abilities were balanced accordingly to their classes roles.
+Frieren and Heiter dealt ranged damage using spells and Goddess's magic respectively. Frieren, as the parties Mage was immensely knowledgeable about magic and was capable of analyzing and dispelling complicated spells such as the barrier magic of the Immortal Böse. However, her reliance on mana detection meant certain mental magics were more effective on her. Heiter was the party Priest. He healed and also provided the party with a variety of support spells, ranging from binding spells to a spell that allowed for subsistence without food, water, and oxygen for up to two months. As a priest, Heiter possessed the Blessings of the Goddess, which gave him immunity to even the curses of a Sage of Destruction.
+Eisen and Himmel were both front-liners. The warrior Eisen wielded a double-bit axe and acted as the party vanguard. Eisen was capable of withstanding most physical attacks, such as the bite of a dragon, without any physical injury. He was also resistant to poison, could fall from great heights without taking any damage and is capable of running across water. The Hero Himmel was the leader of the Hero Party and often decided on tactics for the party. He dealt damage at close range with his immense speed and swordsmanship, wielding a replica of the Hero's blade. Himmel's senses were extremely sharp, to the point where he could fight a Sage of Destruction while under the influence of hypnosis magic.
+
+---
+
+Section: Synopsis
+Content:
+The Hero Party is formed when Himmel and Heiter, deciding to act upon their childhood promise to defeat the Demon King, leave on an adventure together. They first recruit Eisen as their vanguard, and then wander the forests of the Central Lands in search of Frieren, the legendary mage they heard was living in the forest. After recruiting her as their mage, the Hero Party returned to the Royal Capital. The newly formed party immediately ran into mishaps, as Himmel and Eisen were nearly executed by the King for speaking rudely to him. The King then sent them off on their adventure with ten copper coins. The party spent ten years adventuring and facing great challenges together while helping other people along the way.
+
+During their travels, they fought numerous Demons and Monsters. Their feats included sealing the Elder Sage of Corruption, Qual in the Größe Forest, defeating most of Aura's undead army and thus forcing her to retreat and go into hiding, and taking down two other Sages of Destruction, the Immortal Böse and the Miraculous Grausam. They also conquered the Thousand Mirror Tower. By the end of their journey, they would become the party that had beat the most dungeons in history. Eventually, at the end of their ten year journey, they defeated the Demon King.
+In the ten years they journeyed together, the Hero Party grew close to one another and genuinely cared for each other as friends. Himmel noted that while they have lousy memories, it was fun. At their journey's end, they reminisced on the silly requests they undertook, Frieren always falling victim to Mimics, and Heiter's frequent alcoholism.
+
+Years later, all of them are still friends that readily help in others' times of need, like Frieren caring for Heiter in his twilight years and Eisen helping Frieren obtain her master Flamme's notes and telling her where to find his pupil because he wanted Frieren to speak Himmel one last time in Aureole. After being recruited by Frieren, Stark comments that despite Eisen having lived long himself, he treasured the ten years he spent adventuring with his friends more than any other period of his life. Eisen notes that although Frieren considered her adventure with the Hero Party just one one-hundredth of her life, that one one-hundredth changed her.
+
+---

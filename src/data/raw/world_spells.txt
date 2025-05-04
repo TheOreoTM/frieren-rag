@@ -1,0 +1,314 @@
+## Spell Data
+
+---
+
+Section: Overview
+Content:
+Within Frieren: Beyond Journey's End, spells can constitute offense spells, defense spells, Goddess's
+ magic, curses, support spells, or any other forms of magic, which fall
+ broadly under "other spells." These classifications are fan-made and not
+ from official sources with the exception of Goddess's magic and curses,
+ and they are defined as follows:
+
+Unofficial classifications:
+Offense spells: Spells cast by mages in battle to attack opponents directly, potentially via modifying their surroundings to become ammunition or by conjuring up attacks with magic.
+Defense spells: Spells with the purpose of providing defensive properties against other spells or attacks.
+Support spells: Spells not directly used to attack but have been shown to prepare the caster for or assist the caster during combat, such as through incapacitating opponents, improving the caster's fighting ability/other stats, reshaping the terrain in an advantageous manner, etc.
+Other spells: Any other magic or spell that doesn't fall under the other existing classifications, typically used outside of combat. This can consist of magic applied towards everyday life, such as spells that change the properties of an object or perform non-combat or trivial actions.
+
+Official classifications:
+Magic of humans: Magic utilized by humans and elves. Ordinary people, especially within the Empire, can use magic to a certain degree even if they are not mages. Some human magic is developed through extensive study and theorization of magical principles, and may need magic circles in order to be cast. The spells that humans discover are recorded in grimoires or on scrolls.
+Folk magic: A general term for magic that has been passed down through the people. There are many such spells, ranging from ones that are useful in everyday life, to ones that don't have a clear reason for their use. Folk spells may originate from a specific region or tribe and often are specific in their usage and limitations.
+Summoning: Not much is known about summoning, other than ingredients being needed for it.
+Goddess's Magic: Magic utilized by priests with the assistance of Holy Scriptures. Those with a natural talent for the Goddess's magic are said to possess "the Blessing of the Goddess," also known as "the Goddess's Divine Grace," which makes them resistant to curses. In the anime, the Goddess's magic is usually depicted with a green glow.
+Magic of Demons: Magic utilized by demons. Most demons devote themselves to researching one specific type of magic over the course of their lives, though demons are capable of using the magic of humans and may spend time researching human spells. Certain spells, such as flight magic, are so ubiquitous amongst demons that they are not considered to be magic at all.
+Curses: Magic used by demons and monsters that changes the state of living or nonliving matter such as through sedation, petrification, or transformation. Their magical principles are not readily understood through the framework of the magic of humans. Curses are not perceived as magic by mages, and thus they are impossible to evade or obstruct using defense spells. Goddess's magic can be used in some cases to temporarily lift curses. To dispel ordinary curses a priest must utilize Goddess's magic, perform a ritual with specific equipment, or eliminate the source of the curse.
+
+Both named spells and unnamed spells have been listed. Spells under unofficial classifications are classified based on the context of how they were used and thus may not necessarily be limited to a specific classification.
+
+---
+
+Spell Name: Offensive magic: Zoltraak ｢一般攻撃魔法 (ゾルトラーク) Zorutorāku?｣
+Unofficial Classification: Offense Spell
+Description: A simple spell that shoots either a large blast or multiple smaller blasts of concentrated mana. Originally created by the demon Qual as the first form of piercing magic, but humans have altered it to be effective against demons. Considered the basis of humans' modern offensive magic system. The initial version developed by Qual is also referred to as Human Killing Magic ｢人を殺す魔法 (ゾルトラーク) Zorutorāku?｣ and depicted black in the anime, while the version modified by humans to be effective against demons is also referred to as Demon Killing Magic ｢魔族を殺す魔法 (ゾルトラーク) Zorutorāku?｣ and depicted white in the anime.
+Notable Users: Qual, Frieren, Fern, Denken
+First Appearance Anime: Episode 3
+First Appearance Manga: Chapter 5
+
+---
+
+Spell Name: Blood Manipulation: Balterie ｢血を操る魔法 (バルテーリエ) Barutērie?｣
+Unofficial Classification: Offense Spell
+Description: Forms and manipulates numerous tendrils of the user's blood that can be sharpened for attacking purposes or used to block attacks.
+Notable Users: Lügner
+First Appearance Anime: Episode 8
+First Appearance Manga: Chapter 16
+
+---
+
+Spell Name: Transform flower petals into steel: Jubelade ｢花弁を鋼鉄に変える魔法 (ジュベラード) Juberādo?｣
+Unofficial Classification: Offense Spell
+Description: Turns petals from flowers into sharp blades of steel which surround the target and cuts them. Larger blades can form from the pieces of steel and be directed towards the target.
+Notable Users: Scharf
+First Appearance Anime: Episode 19
+First Appearance Manga: Chapter 41
+
+---
+
+Spell Name: Change rocks into bullets: Doragate ｢石を弾丸に変える魔法 (ドラガーテ) Doragāte?｣
+Unofficial Classification: Offense Spell
+Description: Converts rocks into bullet projectiles that can be directed at a target.
+Notable Users: Ehre
+First Appearance Anime: Episode 19
+First Appearance Manga: Chapter 41
+
+---
+
+Spell Name: Spell that slashes almost anything: Reelseiden ｢大体なんでも切る魔法 (レイルザイデン) Reiruzaiden?｣
+Unofficial Classification: Offense Spell
+Description: Slashes through anything with the caster's staff as long as the caster can properly visualize themselves cutting through it. A simple magic that is difficult to follow the trajectory of. The spell range is estimated by Wirbel to be about five meters, which Übel confirms, but a few years later, she displays improved range by slashing a tall building.
+Notable Users: Übel
+First Appearance Anime: Episode 20
+First Appearance Manga: Chapter 41
+
+---
+
+Spell Name: Arrows of Ice: Nephtear ｢氷の矢を放つ魔法 (ネフティーア) Nefutīa?｣
+Unofficial Classification: Offense Spell
+Description: Produces large spears of ice around the caster that are then fired at the target.
+Notable Users: Lawine
+First Appearance Anime: Episode 21
+First Appearance Manga: Chapter 44
+
+---
+
+Spell Name: Tornado Winds: Waldgose ｢竜巻を起こす魔法 (ヴァルドゴーゼ) Varudogōze?｣
+Unofficial Classification: Offense Spell
+Description: Forms a tornado, enveloping the target.
+Notable Users: Denken
+First Appearance Anime: Episode 21
+First Appearance Manga: Chapter 44
+
+---
+
+Spell Name: Wind becomes Hellfire: Daosdorg ｢風を業火に変える魔法 (ダオスドルグ) Daosudorugu?｣
+Unofficial Classification: Offense Spell
+Description: Turns a source of wind into a blaze of fire surrounding the target.
+Notable Users: Denken
+First Appearance Anime: Episode 21
+First Appearance Manga: Chapter 44
+
+---
+
+Spell Name: Lights of Judgement: Catastravia ｢裁きの光を放つ魔法 (カタストラーヴィア) Katasutorāvia?｣
+Unofficial Classification: Offense Spell
+Description: Numerous arrows of light are directed at the target. Upon contact, they form a barrage of large explosions.
+Notable Users: Denken
+First Appearance Anime: Episode 21
+First Appearance Manga: Chapter 44
+
+---
+
+Spell Name: Water Manipulation: Reamstroha ｢水を操る魔法 (リームシュトローア) Rīmushutorōa?｣
+Unofficial Classification: Offense Spell
+Description: Surrounding water is collected to form a massive sphere of water directed above the target that then waterfalls down, drenching them. Especially effective when raining. With enough water, the spell is powerful enough to break defensive barriers.
+Notable Users: Kanne
+First Appearance Anime: Episode 21
+First Appearance Manga: Chapter 45
+
+---
+
+Spell Name: Destructive Lightning: Judradjim ｢破滅の雷を放つ魔法 (ジュドラジルム) Judorajirumu?｣
+Unofficial Classification: Offense Spell
+Description: Casts numerous bolts of lightning in multiple directions from the user's staff.
+Notable Users: Frieren, Frieren's Spiegel clone
+First Appearance Anime: Episode 25
+First Appearance Manga: Chapter 53
+
+---
+
+Spell Name: Hellfire Summoning: Vollzanbel ｢地獄の業火を出す魔法 (ヴォルザンベル) Voruzanberu?｣
+Unofficial Classification: Offense Spell
+Description: Creates a large blast of fire in front of the user.
+Notable Users: Frieren, Frieren's Spiegel clone
+First Appearance Anime: Episode 25
+First Appearance Manga: Chapter 53
+
+---
+
+Spell Name: Whirlwind Attack Spell: Medrozobalt ｢攻撃を旋風に変える魔法 (メドロジユバルト) Medorojiyubaruto?｣
+Unofficial Classification: Offense Spell
+Description: The caster slashes towards the ground, creating a large rift that runs along the ground directed towards the target.
+Notable Users: Unnamed Demon in the Northern Plateau
+First Appearance Manga: Chapter 75
+
+---
+
+Spell Name: Curse Reversal Spell: Mistilziela ｢呪い返しの魔法 (ミステイルジーラ) Misuteirujīra?｣
+Unofficial Classification: Defense Spell
+Description: A primitive magic that reflects any magic that is perceived to be a "curse." It takes a hundred years to learn.
+Notable Users: Serie, Denken
+First Appearance Manga: Chapter 93
+
+---
+
+Spell Name: Three Spears of the Goddess ｢女 (め) 神 (がみ) の三 (さん) 槍 (そう) ?｣
+Unofficial Classification: Goddess's Magic
+Description: Shoots three concentrated spears of light at a target.
+Notable Users: Sein
+First Appearance Anime: Episode 15
+First Appearance Manga: Chapter 31
+
+---
+
+Spell Name: Awakening Spell ｢目 (め) 覚 (ざ) めの解 (かい) 呪 (じゅ) Mezame no kaiju?｣
+Unofficial Classification: Goddess's Magic
+Description: Dispels a sleeping curse for five seconds.
+Notable Users: Sein
+First Appearance Anime: Episode 15
+First Appearance Manga: Chapter 31
+
+---
+
+Spell Name: Spell to Return: Vialathor ｢フィアラトール Fiaratōru?｣
+Unofficial Classification: Goddess's Magic
+Description: Allows one to return back to their present time.
+Notable Users: Frieren
+First Appearance Manga: Chapter 107
+
+---
+
+Spell Name: Seizure of Holy Punishment ｢捕 (ほ) 縛 (ばく) の聖 (せい) 呪 (じゅ) Hobaku no seiju?｣
+Unofficial Classification: Goddess's Magic
+Description: Disables the opponent's ability to use mana. Any active spells that are maintained with mana are disabled as well.
+Notable Users: Lore
+First Appearance Manga: Chapter 137
+
+---
+
+Spell Name: Spell to Transmute All Creation into Gold: Diagoldze ｢万物を黄金に変える魔法 (ディーアゴルゼ) Dīagoruze?｣
+Unofficial Classification: Curse
+Description: Transforms anything in the material world into gold. It is regarded as the strongest curse, one that can not be dispelled even with the Magic of the Goddess. The gold created by Diagoldze is indestructible and immalleable. Diagoldze will not reverse itself in the event of the caster's death.
+Notable Users: Macht
+First Appearance Manga: Chapter 82
+
+---
+
+Spell Name: Spell to guide to paradise: Ansehelschella[note 2] ｢楽園へと導く魔法 (アンシレーシェラ) Anshirēshera?｣
+Unofficial Classification: Curse
+Description: Puts the opponent to sleep, making them experience an endless illusion of a happy dream, even if impossible.
+Notable Users: Grausam
+First Appearance Manga: Chapter 117
+
+---
+
+Spell Name: Imitation Spell: Erfassen ｢模倣する魔法 (エアファーゼン) Eafāzen?｣
+Unofficial Classification: Support Spell
+Description: Generates a suitable weapon and imitates the action and fighting style of an individual using prior analysis of their mana flow.
+Notable Users: Linie
+First Appearance Anime: Episode 9
+First Appearance Manga: Chapter 20
+
+---
+
+Spell Name: Spell of Obedience: Auserlese ｢服従させる魔法 (アゼリューゼ) Azeryūze?｣
+Unofficial Classification: Support Spell
+Description: Both the caster and target's souls are placed on the Scales of Obedience, and the mana of each individual is weighed. The soul of the individual with greater mana tips the scale down, forcing the other to submit to them. If the will of an individual is strong enough, it is possible to break free from the subordination.
+Notable Users: Aura
+First Appearance Anime: Episode 9 (mentioned), Episode 10 (casted)
+First Appearance Manga: Chapter 18 (mentioned), Chapter 22 (casted)
+
+---
+
+Spell Name: Spell of Binding: Sorganeil ｢見た者を拘束する魔法 (ソルガニール) Soruganīru?｣
+Unofficial Classification: Support Spell
+Description: Completely prevents someone from moving or accessing their mana to cast spells while their full body is within the user’s vision. The spell is visually represented with particles moving in a circular motion that surround the target. The target's body, including hair, must be in full view while casting the spell and maintaining it, otherwise the spell disables itself.
+Notable Users: Wirbel, Übel, Wirbel's Spiegel clone, Übel's Spiegel clone
+First Appearance Anime: Episode 20
+First Appearance Manga: Chapter 41
+
+---
+
+Spell Name: Spell for High-Speed Movement: Jilwer ｢高速で移動する魔法 (ジルヴェーア) Jiruvēa?｣
+Unofficial Classification: Support Spell (also Folk Magic)
+Description: A folk spell originally belonging to a mountain tribe in the Southern Lands. It allows the caster to move at high speeds, even when they are holding objects or individuals.
+Notable Users: Laufen
+First Appearance Anime: Episode 20
+First Appearance Manga: Chapter 40
+
+---
+
+Spell Name: Earth Control: Bargland ｢大地を操る魔法 (バルグラント) Baruguranto?｣
+Unofficial Classification: Support Spell
+Description: Divides the earth by forming a large fissure through the ground.
+Notable Users: Richter
+First Appearance Anime: Episode 20
+First Appearance Manga: Chapter 43
+
+---
+
+Spell Name: Fog Control: Nebeladora ｢霧を操る魔法 (ネべラドーラ) Neberadōra?｣
+Unofficial Classification: Support Spell
+Description: An unconventional magic that creates a large fog of mana, completely surrounding the victims and blocking their vision and mana detection. Targets enveloped in the fog can be easily detected by the caster. The fog can be used to attack or condensed to defend against attacks.
+Notable Users: Unnamed Demon in the Northern Plateau
+First Appearance Manga: Chapter 73
+
+---
+
+Spell Name: Spell to manipulate niello wings: Digardnacht ｢黒金の翼を操る魔法 (ディガドナハト) Digadonahato?｣
+Unofficial Classification: Support Spell
+Description: Grows a pair of giant black wings—presumably made of niello—on the caster that can be used to attack and defend. It also appears to afford flight. The individual feathers on the wings can be used as projectiles towards a target.
+Notable Users: Genau
+First Appearance Manga: Chapter 74
+
+---
+
+Spell Name: Spell to dispel fog: Erilfrachte ｢霧を晴らす魔法 (エリルフラーテ) Erirufurāte?｣
+Unofficial Classification: Support Spell
+Description: Dispels fog, including fog made of magic, by making it slowly dissipate away.
+Notable Users: Methode
+First Appearance Manga: Chapter 75
+
+---
+
+Spell Name: Spell to transfer a spell: Fürwehrer ｢魔法を譲渡する魔法 (フィーアヴェリア) Fīaveria?｣
+Unofficial Classification: Support Spell
+Description: Generates a grimoire that sunders the knowledge and practice of a spell from the caster and confers it to the recipient of the grimoire. Allows for one-way transfer of spells between mages.
+Notable Users: Serie
+First Appearance Manga: Chapter 96
+
+---
+
+Spell Name: Spell to analyze treasure chests: Mikheit ｢宝箱を判別する魔法 (ミークハイト) Mīkuhaito?｣
+Unofficial Classification: Other Spell
+Description: A spell used to analyze the contents of a treasure chest, particularly helpful for identifying Mimics. The spell has a 99% success rate.
+Notable Users: Frieren, Fern
+First Appearance Anime: Episode 23
+First Appearance Manga: Chapter 48
+
+---
+
+Section: Trivia
+Content:
+Sour grapes are Eisen's favorite food, and Frieren can be seen using the sweet-to-sour grapes spell to turn grapes sour for him.
+When Lügner discusses how Qual spent the majority of his life developing killing magic, the anime includes a scene that shows a depiction of humanity's primitive defensive magic.
+In the manga, Land knocks Scharf out with a slap. This has been changed to a spell that produces a small electric shock in the anime.
+As Frieren casts the spell that breaks the barrier over the exam location, a single frame of Serie, the creator of the barrier, can be seen in the anime.
+One of Serie's former apprentices was shown to have a favorite spell similar to the spell that captures a bird. It is unknown if the two spells are identical.
+Around half of the grimoires in the world are written in ancient Elvish.
+The official English localization by Viz Media has called Wirbel's spell both "Sorganeil" and "Sorganeel."
+Some spells from the main series are also featured in non-canonical spin-offs:Himmel asks if there is a spell to brew hot tea in Frieren Makes a Detour.
+The scene where Frieren discovers a spell that makes shaved ice is extended upon in Frieren Makes a Detour.
+The spell to remove tough oil stains is the featured spell for Episode 6 of the Mini Anime.
+The spell to make clothes clean and spotless is the featured spell for Episode 11 of the Mini Anime.
+
+---
+
+Section: Etymology
+Content:
+"Erfassen" is German for "seize," "capture," or "comprehend."
+"Auserlese" can be traced from the German word "auserlesen," an adjective meaning "choice" or "select."
+"Bargland" can be traced from the German word "Bergland," a noun meaning "mountainous region."
+"Waldgose" can be traced from the German word "Windhose," a noun meaning "tornado" or "cyclone."
+
+---

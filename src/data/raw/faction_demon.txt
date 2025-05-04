@@ -1,0 +1,84 @@
+Okay, here is the extracted Demon data from the Frieren Wiki page, formatted so you can copy and paste it directly into /src/data/raw/demons.txt.
+
+## Demon Data
+
+---
+
+Section: Introduction
+Content:
+Demons ｢魔 (ま) 族 (ぞく) Mazoku?｣ are a species of monsters known for their anthropomorphic appearance and their natural affinity to magic. They are the main antagonists of Frieren: Beyond Journey's End.
+Articulate monsters, who have been at war with every other race in the world. Demons are naturally proficient in magic. They devote the majority of their lives to one magic that they specialize in and master it. Like other monsters, they are individualistic creatures and do not have any concept of familial relationships. However, demons do maintain a basic level of interaction with one another in order to fight against mankind. Their societal hierarchies are based on strength, which can be assessed at a glance through reading a demon's mana. Because mana to demons is what status and assets are to humans, demons cannot imagine constantly limiting their mana, as it is akin to their very dignity. They in turn expect their enemies to not hide theirs, either. They are a long-lived race and view the passage of time similarly to elves.
+
+---
+
+Section: Origin and History
+Content:
+Demons are the descendants of an unnamed species of monsters who had the ability to shout for help as a way to attract unsuspecting victims. Over time that species would evolve, developing a more humanoid appearance as well as the ability to mimic human behavior more accurately as a way to better trick their prey, until they eventually became the monsters known as demons. They have existed since the Mythical Era.
+Eventually an incredibly powerful demon known simply as the Demon King emerged, uniting the entire species under his rule. Under his leadership, demons waged war against the other sapient races for a thousand years, reducing mankind's sphere of influence to only a third of what it once was at its zenith.
+The elves were also targeted by the Demon King's army, with many of their villages being destroyed (including Frieren's village, with her being the only survivor). Although it is unclear how successful the demons' genocidal campaign against the elves was, it can be assumed that it is one of the reasons as to why there are so few elves in the modern era.
+The Demon King would eventually meet his end at the hands of Himmel and his party. With his death, the demons would scatter, serving under the remaining high-ranking members of the Demon King's army, such as the Sage of Destruction Aura.
+While there are still many powerful demons around the world, none of them seem to have what is necessary to organize an army large enough to threaten the world on the same scale as the Demon King.
+
+---
+
+Section: Biology - Appearance
+Content:
+Like all other monsters, demons turn into particles of mana and disappear when they die, including their clothing. They are a long-lived race and view the passage of time similarly to elves. While their internal anatomy remains largely a mystery, demons are known to possess a heart, which also serves as a critical weakness. Targeting and destroying it is an effective way to kill a demon. Additionally, like elves, dwarves, and humans, demons possess a soul.
+Demons are monsters that have evolved to look like humans to lure them, and as a consequence, most of them look as close to humans as possible with the exception of their horns. All demons have at least one horn on their head, though the number, shape, and size of these horns can vary significantly.
+Some demons possess a more monstrous appearance, such as the Elder Sage of Corruption Qual, who was tens of meters tall and had jagged teeth, and the Demon General Revolte who had four arms and a lower half similar to that of a serpent.
+
+---
+
+Section: Biology - Diet
+Content:
+Despite being omnivores, many demons eat humans for sustenance, just like their unnamed ancestors. While not all demons engage in such behavior, it is common enough to be regarded as common knowledge by humans. Demons view humans primarily as prey to be killed and consumed, even though they can survive without doing so.
+
+---
+
+Section: Behavior and Culture - Personality
+Content:
+Demons are defined as articulate monsters by the Great Mage Flamme. They are incompatible with other races. Demons are by their very nature liars and will talk to humans to manipulate them into dropping their guard and sparing them, though they only know how to use words without knowing its meaning. Aura, for example, feigned a peace mission to destroy Graf Granat's Domain, and a young demon girl would cry for "mother" whenever cornered in an attempt to gather pity from humans that would kill her otherwise. While demons have been shown to feel emotions, they do not feel the same emotions as humans do, and as a result, are incompatible with human ideas of morality. They are deeply proud of their mana levels, and due to the power-based hierarchies they form, they will not and cannot conceal their mana for long periods of time. Even temporarily concealing it to avoid detection—something which any demon can do according to Lügner—is considered to be inappropriate in a battle between mages.
+
+---
+
+Section: Behavior and Culture - Social Hierarchy
+Content:
+For demons, strength determines one's position in their social hierarchy, which can be assessed at a glance through reading a demon's mana. Because mana to demons is what status and assets are to humans, demons cannot imagine constantly limiting their mana, as it is akin to their very dignity. They in turn expect their enemies to not hide theirs, either.
+
+---
+
+Section: Behavior and Culture - Personal Relations
+Content:
+Like all monsters, demons are anti-social creatures by nature, preferring to be alone and avoiding contact with other members of their species beyond the necessary. They only form groups so that they can fight against mankind, refusing to form any deep bonds with each other. It seems unusual for demons to show a deep sense of loyalty to another or to show a desire to avenge a fallen comrade. Moreover, they have no qualms with betraying or killing their own kind if it benefits their goals. Some demons even go so far as to show indifference toward the survival of their entire species.
+Due to their individualistic nature, the concept of family is foreign to them, and they will often abandon their children once they are born. They also seem to lack the notion of romantic relationships, as no demon couples have ever been seen.
+
+---
+
+Section: The Demon King's Army
+Content:
+The Demon King's Army ｢魔 (ま) 王 (おう) 軍 (ぐん) Maōgun?｣ was a unified force under the rule of the Demon King during the war against humanity. The army was governed through fear, a necessary measure to control the inherently individualistic nature of demons. As a result, mutual trust and loyalty among them were weak, as demons lacked a strong sense of allegiance to one another. The army's hierarchy included prominent roles such as Demon General, Greater Demon, the Seven Sages of Destruction, and the Demon King's Confidant.
+
+Ranks:
+- Demon General ｢将 (しょう) 軍 (ぐん) Shōgun?｣: Skilled warriors who excel in martial arts and use their powerful mana to enhance their physical abilities. Known named Demon Generals include Divine Revolte, Basalt the Throne, Schräg the Thunderbolt and the Bloody God of War Rivale. Most Demon Generals appear to command their own subordinates or armies.
+- Greater Demon ｢大 (だい) 魔 (ま) 族 (ぞく) Daimazoku?｣: Immensely powerful beings, typically possessing vast reserves of mana and long lifespans. Both demon mages and warriors can attain the classification of Greater Demon. A single Greater Demon is said to possess the strength to annihilate an entire fortress city.
+- Seven Sages of Destruction ｢七 (しち) 崩 (ほう) 賢 (けん) Shichihōken?｣: Served directly under the Demon King. During the war against humanity, they controlled key strategic areas across the continent, especially in the Northern Lands. Their magic is beyond human comprehension and cannot be used by mankind.
+- Demon King's Confidant ｢魔 (ま) 王 (おう) の腹 (ふく) 心 (しん) Maō no Fukushin?｣: Title held solely by Schlacht the Omniscient, who relayed commands to the Seven Sages of Destruction on the Demon King's behalf.
+
+---
+
+Section: Natural Abilities
+Abilities:
+- Longevity: Demons are known for their longevity, with many powerful demons having lived for hundreds of years and the Demon King himself being stated to be over a millennium old by the time of his death. Due to their longevity, they perceived time in an accelerated manner and are able to hone their skills and magic over the course of many centuries.
+- Natural physical proficiency: Although demons bear a resemblance to humans, their physical abilities—such as strength and speed—far exceed those of the average human. For instance, even a demon child can effortlessly kill an adult human male and burn down an entire mansion.
+- Natural magic proficiency: Demons are arguably the race with the highest affinity for the magical arts, only being possibly rivaled by the elves. Since demons base their social hierarchy on power, which is said to be assessed through mana levels, it can be assumed that they naturally possess the ability to perceive and detect mana. Unlike human and elven mages, demons will often learn only one magical discipline, which they will then improve and master it for the rest of their lives, making them incredibly powerful at the cost of a lack of variety in their magical arsenal.
+- Flight magic ｢飛 (ひ) 行 (こう) 魔 (ま) 法 (ほう) Hikō mahō?｣: Due to their natural affinity to magic, demons can learn how to fly just as easily as humans can learn how to walk. The ability to fly is so common among demonkind that they don't even consider "flight magic" a proper magical discipline, but more of a natural skill.
+- Curses ｢呪 (のろ) い Noroi?｣: As monsters, demons have the potential of developing curses, a unique type of magic that can sedate, petrify, or transform the state of living or nonliving matter. Since curses are not perceived as magic, they are almost impossible to defend against or evade and can only be dispelled using the Goddess's magic or other specific spells, such as the Curse Reversal Spell: Mistilziela.
+- Human mental magic resistance: As manmade mind-control magic and hypnosis was created to specifically work on the minds of humans and similar creatures, demons are naturally resistant to its effects as their brain structure is highly different. For a human mage to cast mental magic on a demon successfully, they would need extraordinary talent and even then they would experience unbearable torment as a side-effect.
+
+---
+
+Section: Trivia
+Content:
+Viz Media's localization of ｢大 (だい) 魔 (ま) 族 (ぞく) Daimazoku?｣ includes both Greater Demon and Great Demon.
+
+---

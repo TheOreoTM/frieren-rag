@@ -1,0 +1,35 @@
+## Frieren's Party Data
+
+---
+
+Section: Overview
+Content:
+Frieren's Party consists of the elven Mage Frieren, the human Mage Fern, the human Warrior Stark, and formerly, the human Priest Sein, who are journeying to Aureole.
+
+The party originally consisted of just Frieren and Fern, as Heiter had asked Frieren to take Fern on as her apprentice after his death. Twenty-four years after the Hero Himmel's passing and after Heiter's passing, the duo set off together and traveled through the Central Lands. Twenty-eight years after Himmel's passing, they visit Eisen in the Bredt Region, who urges Frieren to go to Aureole, located at the northernmost point of the continent near Ende, to speak with Himmel again. He also tells them to seek out his apprentice, the Warrior Stark, at the Riegel Canyon, and they ask him to join their party.
+After recruiting Stark, Frieren's Party is officially formed, and they proceed through the Fortress City of Waal to enter the Northern Lands. While traveling through the region, Frieren saves the human Priest Sein in the Alt Woods from a bottomless swamp. After Sein saves Stark from a would-be fatal snake bite, the trio convince him to join their party to search for his best friend, Gorilla Warrior, who had decided to journey further north ten years prior.
+Sein later splits from the party in order to seek out Gorilla, who he learns had gone towards the trading town of Tür. However, Frieren still considers Sein a member of their party and avoids recruiting other healers into their party as she is still reserving the spot for him.
+
+---
+
+Section: Members
+Active:
+- Frieren
+- Fern
+- Stark
+Former:
+- Sein
+
+---
+
+Section: Abilities
+Content:
+Compared to the Hero Party, this group consists of Frieren and Fern as the two mages but only one frontliner in Stark, who serves as their vanguard. They temporarily lack a healer after the departure of Sein, though his position in the party is still reserved for him.
+
+---
+
+Section: Synopsis
+Content:
+This section is a stub on the Frieren Wiki and contains no detailed information.
+
+---
