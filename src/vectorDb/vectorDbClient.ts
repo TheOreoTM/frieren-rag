@@ -1,15 +1,15 @@
 import { config } from "../config";
 import { ChromaClient, Collection, IncludeEnum } from "chromadb";
-import { Document } from "langchain/document";
 
-// Define a standard interface for vector DB operations
+import { OpenAIEmbeddings } from "@langchain/openai";
+import type { Embeddings } from "@langchain/core/embeddings";
+
 export interface VectorDatabase {
     initialize(): Promise<void>;
     addDocuments(docs: { content: string; metadata?: any }[], embeddings: number[][]): Promise<void>;
     search(queryEmbedding: number[], k: number): Promise<{ chunk: string; metadata?: any }[]>;
 }
 
-// --- In-Memory Vector Database Implementation ---
 export class InMemoryVectorDB implements VectorDatabase {
     private vectors: { embedding: number[]; chunk: string; metadata?: any }[] = [];
 
@@ -36,9 +36,8 @@ export class InMemoryVectorDB implements VectorDatabase {
         }
         results.sort((a, b) => b.similarity - a.similarity);
         return results.slice(0, k);
-    }
+    } // Simple Cosine Similarity
 
-    // Simple Cosine Similarity
     private cosineSimilarity(vecA: number[], vecB: number[]): number {
         let dotProduct = 0;
         let magnitudeA = 0;
@@ -67,10 +66,33 @@ export class ChromaVectorDB implements VectorDatabase {
     private client: ChromaClient;
     private collection: Collection | undefined;
     private collectionName: string;
+    // *** ADD THIS LINE ***
+    private embeddingFunctionClient: Embeddings; // To pass to createCollection
 
     constructor() {
         this.client = new ChromaClient({ path: config.vectorDbUrl });
         this.collectionName = config.vectorDbCollectionName;
+
+        // *** ADD THIS BLOCK TO CREATE THE EMBEDDING CLIENT INSTANCE ***
+        // This is the same logic you likely have in src/embeddings/embeddingClient.ts
+        if (config.embeddingModelName.includes("text-embedding")) {
+            // Covers OpenAI models
+            if (!config.openaiApiKey) {
+                throw new Error("OPENAI_API_KEY not set for OpenAI embeddings.");
+            }
+            this.embeddingFunctionClient = new OpenAIEmbeddings({
+                apiKey: config.openaiApiKey,
+                model: config.embeddingModelName,
+                // Optional: Explicitly set dimensions if you want 1536, but let's use 3072 for now
+                // dimensions: 1536
+            });
+        } else if (config.embeddingModelName.includes("embedding-001")) {
+            // Covers Google models
+            throw new Error("Google is not yet supported.");
+        } else {
+            throw new Error(`Unsupported embedding model for ChromaDB integration: ${config.embeddingModelName}`);
+        }
+        // *************************************************************
     }
 
     async initialize(): Promise<void> {
@@ -81,42 +103,48 @@ export class ChromaVectorDB implements VectorDatabase {
             console.log(`ChromaDB collection "${this.collectionName}" not found, creating...`);
             this.collection = await this.client.createCollection({
                 name: this.collectionName,
+                // *** PASS THE EMBEDDING FUNCTION INSTANCE HERE ***
+                embeddingFunction: this.embeddingFunctionClient as any, // Cast might still be needed
             });
-            console.log(`Created new ChromaDB collection: ${this.collectionName}`);
+            console.log(`Created new ChromaDB collection: ${this.collectionName} with specified embedding function.`); // Adjusted log message
         }
-    }
+    } // Keep addDocuments as is (or using upsert if you switched)
 
     async addDocuments(docs: { content: string; metadata?: any }[], embeddings: number[][]): Promise<void> {
         if (!this.collection) throw new Error("Chroma collection not initialized.");
-        if (docs.length !== embeddings.length) throw new Error("Mismatched number of documents and embeddings.");
+        if (docs.length !== embeddings.length) throw new Error("Mismatched number of documents and embeddings."); // Use more unique IDs as before
 
-        const ids = docs.map((_, i) => `doc_${Date.now()}_${i}_${Math.random().toString(36).substring(7)}`); // More unique IDs
+        const ids = docs.map((_, i) => `doc_${Date.now()}_${i}_${Math.random().toString(36).substring(7)}`);
         const documents = docs.map((doc) => doc.content);
         const metadatas = docs.map((doc) => doc.metadata || {});
 
-        console.log("Prepared data for ChromaDB:");
-        console.log("IDs:", ids);
-        console.log("Documents (first 5):", documents.slice(0, 5));
-        console.log("Metadatas (first 5):", metadatas.slice(0, 5));
-        console.log("Embeddings (first 5, first 10 dimensions):");
-        embeddings.slice(0, 5).forEach((emb, index) => {
-            console.log(`  Emb ${index}: [${emb.slice(0, 10).join(", ")}...] (dimension: ${emb.length})`);
-        });
-        console.log(`Total embeddings: ${embeddings.length}`);
+        // *** Optional: Keep console logs for debugging ***
+        // console.log("Prepared data for ChromaDB:");
+        // console.log("IDs:", ids);
+        // console.log("Documents (first 5):", documents.slice(0, 5));
+        // console.log("Metadatas (first 5):", metadatas.slice(0, 5));
+        // console.log("Embeddings (first 5, first 10 dimensions):");
+        // embeddings.slice(0, 5).forEach((emb, index) => {
+        //     console.log(`  Emb ${index}: [${emb.slice(0, 10).join(', ')}...] (dimension: ${emb.length})`);
+        // });
+        // console.log(`Total embeddings: ${embeddings.length}`);
+        // *********************************************
 
         try {
-            await this.collection.upsert({
+            // *** USE add or upsert ***
+            await this.collection.add({
+                // Or await this.collection.upsert({
                 ids: ids,
-                embeddings: embeddings,
+                embeddings: embeddings, // Still provide the embeddings you generated
                 documents: documents,
                 metadatas: metadatas,
             });
-            console.log(`Upserted ${docs.length} documents to ChromaDB collection: ${this.collectionName}`);
+            console.log(`Added/Upserted ${docs.length} documents to ChromaDB collection: ${this.collectionName}`);
         } catch (error) {
-            console.error("Error adding documents to ChromaDB:", error);
-            throw error;
+            console.error("Error adding/upserting documents to ChromaDB:", error);
+            throw error; // Re-throw
         }
-    }
+    } // Keep search as is
 
     async search(queryEmbedding: number[], k: number): Promise<{ chunk: string; metadata?: any }[]> {
         if (!this.collection) throw new Error("Chroma collection not initialized.");
